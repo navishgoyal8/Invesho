@@ -6,7 +6,7 @@ function App() {
   const [employees, setEmployees] = useState([]);
 
   const handleSearch = async () => {
-    const res = await axios.get(`http://localhost:5000/api/search?company=${company}`);
+    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/search?company=${company}`);
     setEmployees(res.data);
   };
 
